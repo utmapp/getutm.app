@@ -267,7 +267,7 @@ main { max-width: 1200px; margin: 0 auto; }
   .apps { padding-top: 16px; gap: 16px; }
   .app-se { grid-template-columns: minmax(0, 1fr); gap: 20px; padding: 28px 24px; }
   .app-se h2 { font-size: 30px; }
-  .app-se p { font-size: 15px; margin-bottom: 0; }
+  .app-se p { font-size: 15px; margin-bottom: 20px; }
   .app-se .cta-row { flex-direction: column; align-items: stretch; }
   .app-se .cta-row .btn { width: 100%; }
   .ipad-frame { border-radius: 22px; padding: 12px; box-shadow: inset 0 0 0 2px #3a4157; }
