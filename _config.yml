@@ -1,0 +1,43 @@
+# Site
+title: UTM
+tagline: Virtual machines on Apple devices
+description: Securely run operating systems on your Mac. UTM SE brings virtual machines to iPhone, iPad, and Vision Pro.
+url: "https://getutm.app"
+baseurl: ""
+lang: en
+logo: /assets/img/siteicon.png
+twitter:
+  username: UTMapp
+  card: summary_large_image
+social:
+  name: UTM
+  links:
+    - https://twitter.com/UTMapp
+    - https://github.com/utmapp
+
+# Build
+timezone: Etc/UTC
+permalink: pretty
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter_opts:
+    disable: true
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-redirect-from
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules

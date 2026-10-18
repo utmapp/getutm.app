@@ -1,0 +1,139 @@
+---
+layout: default
+title: UTM
+description: Securely run operating systems on your Mac
+image: /assets/img/og.jpg
+body_class: home
+---
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-title">
+      <img class="hero-icon" src="{{ '/assets/img/appicon.png' | relative_url }}" alt="" width="88" height="88">
+      <h1>Securely run operating systems on your Mac.</h1>
+    </div>
+    <div class="hero-aside">
+      <p class="lede">Windows, Linux, macOS and classic systems in a Mac app that's free and open source.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://github.com/utmapp/UTM/releases/latest/download/UTM.dmg"><i class="fab fa-github"></i>Download for Mac</a>
+        <a class="btn btn-white" href="https://apps.apple.com/us/app/utm-virtual-machines/id1538878817"><i class="fab fa-apple"></i>Mac App Store</a>
+        <a class="link-arrow" href="#utm-se">UTM SE for iOS →</a>
+      </div>
+    </div>
+  </div>
+  <div class="video-card">
+    <video autoplay muted loop playsinline preload="metadata" poster="{{ '/assets/img/windowsxp.webp' | relative_url }}">
+      <source src="{{ '/assets/video/utm_loop_1920x1200.webm' | relative_url }}" type="video/webm">
+      <source src="{{ '/assets/video/utm_loop_1920x1200.mp4' | relative_url }}" type="video/mp4">
+    </video>
+  </div>
+</section>
+
+<section class="tiles">
+  <div class="tile tile-wide tile-white text-first">
+    <div class="tile-text">
+      <h2>Windows. Linux. Meet Apple Silicon.</h2>
+      <p>UTM uses Apple's Hypervisor framework to run ARM64 operating systems on Apple Silicon at near native speed. Slower emulation covers Intel x86/x64 on Apple Silicon, plus dozens of other processors including: ARM32, MIPS, PPC and RISC-V. Your Mac can now truly run anything.</p>
+    </div>
+    <div class="tile-media tile-stack">
+      <img class="stack-back" src="{{ '/assets/img/windows11.webp' | relative_url }}" alt="Windows 11 running in UTM" decoding="async">
+      <img class="stack-front" src="{{ '/assets/img/ubuntu.webp' | relative_url }}" alt="Ubuntu 24.04 running in UTM" decoding="async">
+    </div>
+  </div>
+
+  <div class="tile tile-sand tile-bleed">
+    <div class="tile-text">
+      <h2>Emulate classic operating systems.</h2>
+      <p>Not just the latest and greatest. Emulate older systems whether they ran on PowerPC, SPARC or x86.</p>
+    </div>
+    <img src="{{ '/assets/img/macos9.webp' | relative_url }}" alt="Mac OS 9.1 running in UTM" decoding="async">
+  </div>
+
+  <div class="tile tile-rose tile-bleed">
+    <div class="tile-text">
+      <h2>Virtualize macOS as well.</h2>
+      <p>Run multiple instances of macOS on your Apple Silicon Mac, useful for developers and builders. Requires an Apple Silicon Mac running macOS Monterey or later.</p>
+    </div>
+    <img src="{{ '/assets/img/macos.webp' | relative_url }}" alt="macOS running as a guest in UTM" decoding="async">
+  </div>
+
+  <div class="tile tile-wide tile-blue image-first">
+    <img class="tile-media" src="{{ '/assets/img/library.webp' | relative_url }}" alt="The UTM virtual machine library with snapshots" decoding="async">
+    <div class="tile-text">
+      <h2>Designed for macOS.</h2>
+      <p>UTM was created for macOS and only for Apple platforms. It looks and feels like a Mac app, with the privacy and security features you expect.</p>
+    </div>
+  </div>
+
+  <div class="tile tile-sky tile-bleed">
+    <div class="tile-text">
+      <h2>QEMU and Apple Virtualization without the headache.</h2>
+      <p>UTM is built on <a href="https://www.qemu.org">QEMU</a>, decades-old, free and open source emulation and virtualization software that is widely used and actively maintained. QEMU is powerful but hard to configure; UTM gives you its flexibility without the learning curve. It can also use <a href="https://developer.apple.com/documentation/virtualization">Apple Virtualization</a>, a native framework for macOS and Linux on Apple Silicon.</p>
+    </div>
+    <img src="{{ '/assets/img/configuration.webp' | relative_url }}" alt="UTM virtual machine settings" decoding="async">
+  </div>
+
+  <div class="tile tile-dark">
+    <div class="tile-text">
+      <h2>Script it.</h2>
+      <p>Create, configure, and control virtual machines from AppleScript or the <code>utmctl</code> command line tool. Perfect for advanced users, automation, and agents. See the <a href="https://docs.getutm.app/scripting/scripting/">scripting reference</a>.</p>
+    </div>
+<pre class="terminal"><span class="dim">$</span> utmctl list
+<span class="dim">UUID        Status   Name</span>
+2F5A…9C1E   started  Debian 12
+7B10…E4D2   stopped  Windows 11
+<span class="dim">$</span> utmctl start "Windows 11"
+<span class="dim">$</span> utmctl start "Debian 12" --disposable
+<span class="dim">$</span> utmctl ip-address "Debian 12"
+<span class="dim">$</span> utmctl snapshot create "Debian 12" --name <span class="str">"Before update"</span>
+<span class="dim">$</span> utmctl snapshot list "Debian 12" --json
+<span class="dim">$</span> utmctl snapshot restore "Debian 12" --snapshot <span class="str">"Before update"</span>
+<span class="dim">$</span> utmctl usb connect "Debian 12" 05AC:12A8
+<span class="dim">$</span> utmctl suspend "Windows 11"
+<span class="dim">$</span> utmctl stop "Debian 12"
+<span class="dim">$</span> osascript -e <span class="str">'tell application "UTM" to start virtual machine named "Debian 12"'</span></pre>
+  </div>
+</section>
+
+<section class="apps" id="utm-se">
+  <div class="app-se">
+    <div>
+      <span class="pill">iPhone &amp; iPad &amp; Vision Pro</span>
+      <h2>UTM SE for iOS.</h2>
+      <p>A slimmed-down UTM that only runs on emulation. It uses a slower interpreter, which suits older systems like DOS and lightweight Linux. Free on the App Store and select alternative marketplaces. The full UTM for iOS is available for sideloading and jailbroken devices.</p>
+      <div class="cta-row">
+        <a class="btn btn-dark" href="https://apps.apple.com/us/app/utm-se-retro-pc-emulator/id1564628856"><i class="fab fa-apple"></i>App Store</a>
+        <a class="btn btn-white" href="https://docs.getutm.app/installation/ios/"><i class="fas fa-wrench"></i>Full UTM</a>
+      </div>
+    </div>
+    <div class="ipad-frame">
+      <img src="{{ '/assets/img/utm-se-ipad.webp' | relative_url }}" alt="UTM SE on iPad running FreeDOS" decoding="async">
+    </div>
+  </div>
+
+  <div class="app-remote">
+    <img class="icon" src="{{ '/assets/img/remote-icon.png' | relative_url }}" alt="" width="72" height="72">
+    <div>
+      <div class="title"><h2>UTM Remote</h2><span class="tag">iOS</span></div>
+      <p>Control UTM on your Mac from your iPhone or iPad. Free on the App Store.</p>
+    </div>
+    <a class="btn btn-remote" href="https://apps.apple.com/us/app/utm-remote/id6471394713"><i class="fab fa-apple"></i>App Store</a>
+  </div>
+</section>
+
+<section class="faq">
+  <h2>Questions</h2>
+  <div class="faq-grid">
+    <div class="faq-card">
+      <h3>What's the difference in the Mac App Store version?</h3>
+      <p>None. UTM is and always will be completely free and open source, and the App Store version has the same features. Its one advantage is automatic updates. Buying it funds development and shows your support.</p>
+    </div>
+    <div class="faq-card">
+      <h3>How do I contribute?</h3>
+      <p>UTM is on <a href="https://github.com/utmapp/UTM">GitHub</a>. You can also contribute to the <a href="https://www.qemu.org/contribute/">QEMU project</a>.</p>
+    </div>
+    <div class="faq-card">
+      <h3>Can I run games?</h3>
+      <p>UTM supports DirectX 11 and DirectX 12 on Windows 11 as well as Vulkan 1.3 on Linux. Game compatibility is ongoing work and we encourage to try out your games and provide feedback.</p>
+    </div>
+  </div>
+</section>
